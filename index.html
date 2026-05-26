@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pioneer Driving School offers professional behind-the-wheel driving lessons in San Diego.">
+  <title>Pioneer Driving School San Diego | Behind-the-Wheel Lessons</title>
+  <style>
+    :root {
+      --ink: #16313d;
+      --muted: #536c73;
+      --line: #cfe9ef;
+      --cream: #fff1b8;
+      --sky: #00a7df;
+      --pine: #103f4a;
+      --leaf: #00a879;
+      --gold: #ffca2e;
+      --coral: #ff5a3d;
+      --white: #ffffff;
+      --soft: #effbff;
+      --shadow: 0 22px 55px rgba(0, 118, 160, .18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, var(--pine), #067590);
+      color: var(--white);
+      font-size: .92rem;
+    }
+
+    .topbar__inner,
+    .nav,
+    .section,
+    .footer__inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .topbar a {
+      font-weight: 700;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 230px;
+    }
+
+    .brand img {
+      width: 70px;
+    }
+
+    .brand span {
+      display: block;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .brand small {
+      color: var(--muted);
+      display: block;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--pine);
+      font-weight: 800;
+      font-size: .9rem;
+      text-transform: uppercase;
+    }
+
+    .nav__links a {
+      padding: 10px 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      border-radius: 6px;
+      border: 2px solid var(--sky);
+      background: linear-gradient(135deg, var(--sky), var(--leaf));
+      color: var(--white);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      box-shadow: 0 14px 28px rgba(0, 167, 223, .26);
+    }
+
+    .button--light {
+      color: var(--pine);
+      background: linear-gradient(135deg, var(--cream), var(--gold));
+      border-color: var(--gold);
+    }
+
+    .button--ghost {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .7);
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .button--book {
+      border-color: #5a97c4;
+      background: #5a97c4;
+      color: var(--white);
+      box-shadow: 0 16px 30px rgba(90, 151, 196, .3);
+    }
+
+    .nav__links .button--book {
+      min-height: 40px;
+      padding: 9px 22px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    .hero {
+      min-height: calc(100vh - 126px);
+      display: grid;
+      align-items: stretch;
+      background:
+        radial-gradient(circle at 82% 42%, rgba(0, 167, 223, .34), transparent 34%),
+        linear-gradient(135deg, #103f4a 0%, #006f88 54%, #00a7df 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(16, 63, 74, .96) 0%, rgba(16, 63, 74, .82) 42%, rgba(16, 63, 74, .2) 68%, rgba(16, 63, 74, 0) 100%);
+      z-index: 1;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 86px 0 70px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .hero__photo {
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: min(58vw, 860px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 62% center;
+      mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .75) 15%, #000 34%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--pine);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .78rem;
+      box-shadow: 0 8px 18px rgba(255, 202, 46, .22);
+    }
+
+    .hero .eyebrow,
+    .section--dark .eyebrow {
+      background: var(--cream);
+      color: var(--pine);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: 4.55rem;
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: rgba(255, 255, 255, .88);
+      font-size: 1.18rem;
+      margin-bottom: 30px;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero-card {
+      align-self: end;
+      background: rgba(255, 255, 255, .94);
+      color: var(--pine);
+      border: 1px solid rgba(255, 255, 255, .48);
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      width: 180px;
+      margin: -86px auto 14px;
+      filter: drop-shadow(0 18px 28px rgba(32, 53, 59, .2));
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .hero-card ul,
+    .check-list {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+    }
+
+    .hero-card li,
+    .check-list li {
+      position: relative;
+      padding-left: 26px;
+      margin: 10px 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .hero-card li::before,
+    .check-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--coral);
+      position: absolute;
+      left: 0;
+      top: .55em;
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section--soft {
+      width: 100%;
+      max-width: none;
+      background: var(--soft);
+    }
+
+    .section--soft > .section,
+    .section--dark > .section {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section__intro {
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+
+    .section__intro h2 {
+      margin-bottom: 14px;
+      font-size: 2.65rem;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .section__intro p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .media-frame {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--line);
+    }
+
+    .media-frame img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .feature-grid,
+    .price-grid,
+    .testimonial-grid,
+    .requirements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature,
+    .price-card,
+    .testimonial-card,
+    .requirement-card,
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(32, 53, 59, .08);
+    }
+
+    .feature,
+    .price-card,
+    .testimonial-card,
+    .requirement-card {
+      border-top: 5px solid var(--sky);
+    }
+
+    .feature:nth-child(2),
+    .price-card:nth-child(2),
+    .testimonial-card:nth-child(2),
+    .requirement-card:nth-child(2) {
+      border-top-color: var(--coral);
+    }
+
+    .feature:nth-child(3),
+    .price-card:nth-child(3),
+    .testimonial-card:nth-child(3) {
+      border-top-color: var(--gold);
+    }
+
+    .price-card:nth-child(4),
+    .testimonial-card:nth-child(4) {
+      border-top-color: var(--leaf);
+    }
+
+    .feature h3,
+    .price-card h3,
+    .testimonial-card h3,
+    .requirement-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.22rem;
+      line-height: 1.2;
+    }
+
+    .feature p,
+    .price-card p,
+    .testimonial-card p,
+    .requirement-card p,
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: .08em;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-card strong {
+      display: block;
+      margin-top: 18px;
+      color: var(--pine);
+    }
+
+    .testimonial-card span {
+      display: block;
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
+    .requirement-card {
+      grid-column: span 1;
+    }
+
+    .requirement-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .requirement-card li + li {
+      margin-top: 10px;
+    }
+
+    .price {
+      margin: 18px 0 14px;
+      color: var(--sky);
+      font-size: 2.2rem;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 800;
+    }
+
+    .section--dark {
+      width: 100%;
+      max-width: none;
+      background: linear-gradient(135deg, var(--pine), #006f88);
+      color: var(--white);
+    }
+
+    .section--dark .section__intro p,
+    .section--dark .contact-card p {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, .08);
+      border-color: rgba(255, 255, 255, .16);
+      box-shadow: none;
+    }
+
+    .contact-card a {
+      color: var(--cream);
+      font-weight: 900;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: rgba(255, 255, 255, .84);
+      font-weight: 800;
+      font-size: .92rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .1);
+      color: var(--white);
+      min-height: 48px;
+      padding: 12px 14px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, .58);
+    }
+
+    .footer {
+      background: #172b31;
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 24px 0;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav__links {
+        width: 100%;
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .nav__links .button--book {
+        margin-left: auto;
+      }
+
+      .hero__inner,
+      .split,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero__photo {
+        width: 58vw;
+        opacity: .72;
+      }
+
+      h1 {
+        font-size: 3.15rem;
+      }
+
+      .hero-card {
+        max-width: 420px;
+      }
+
+      .feature-grid,
+      .price-grid,
+      .testimonial-grid,
+      .requirements-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar__inner {
+        display: grid;
+      }
+
+      .brand img {
+        width: 60px;
+      }
+
+      .nav__links {
+        font-size: .82rem;
+      }
+
+      .hero__inner,
+      .section {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .hero__inner {
+        padding: 58px 0 52px;
+      }
+
+      .hero__photo {
+        width: 100%;
+        opacity: .28;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section__intro h2 {
+        font-size: 2rem;
+      }
+
+      .feature-grid,
+      .price-grid,
+      .testimonial-grid,
+      .requirements-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card img {
+        width: 148px;
+        margin-top: -64px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .nav__links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow-x: visible;
+      }
+
+      .nav__links a {
+        text-align: center;
+      }
+
+      .nav__links .button {
+        grid-column: span 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar__inner" aria-label="Contact information">
+      <span>San Diego behind-the-wheel driving lessons</span>
+      <span><a href="tel:+18589105724">(858) 910-5724</a> | <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Pioneer Driving School home">
+        <img src="pioneer-logo.png" alt="Pioneer Driving School San Diego logo">
+        <span>Pioneer<br><small>Driving School</small></span>
+      </a>
+      <div class="nav__links">
+        <a href="#about">About</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#pricing">Pricing</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="#contact">Contact</a>
+        <a class="button button--book" href="book.html">Book Online</a>
+        <a class="button" href="tel:+18589105724">Call Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-label="Pioneer Driving School introduction">
+      <div class="hero__photo" aria-hidden="true">
+        <img src="aplus-homepage-thumbup-girl.jpg" alt="">
+      </div>
+      <div class="hero__inner">
+        <div>
+          <span class="eyebrow">Family owned and operated</span>
+          <h1>Learn to drive with confidence in San Diego.</h1>
+          <p>Professional, DMV-certified behind-the-wheel instruction for teen, adult, and senior drivers. Build safer habits with patient coaching, practical routes, and lessons tailored to your goals.</p>
+          <div class="hero__actions">
+            <a class="button button--book" href="book.html">Book Online</a>
+            <a class="button button--light" href="tel:+18589105724">Call (858) 910-5724</a>
+            <a class="button button--ghost" href="#pricing">View Lesson Packages</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Pioneer highlights">
+          <img src="pioneer-logo.png" alt="">
+          <strong>Safe, calm coaching from experienced instructors.</strong>
+          <ul>
+            <li>More than 10,000 students trained</li>
+            <li>Fully licensed, insured, and bonded</li>
+            <li>Dual-controlled, 5-star safety rated cars</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section split" id="about">
+      <div class="media-frame">
+        <img src="image-83.png" alt="Student practicing attentive driving inside a car">
+      </div>
+      <div>
+        <div class="section__intro">
+          <span class="eyebrow">Our goal</span>
+          <h2>Clear instruction for real-world roads.</h2>
+          <p>Pioneer Driving School helps students become safe, confident, defensive drivers through focused one-on-one coaching. Lessons are designed around each student's comfort level, permit status, and driving goals.</p>
+        </div>
+        <ul class="check-list">
+          <li>DMV-certified, highly trained instructors</li>
+          <li>Customized lesson plans for new and returning drivers</li>
+          <li>DMV test coaching and pre-test preparation</li>
+          <li>Competitive rates with practical scheduling</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="section--soft" id="lessons">
+      <section class="section">
+        <div class="section__intro">
+          <span class="eyebrow">Lessons</span>
+          <h2>Behind-the-wheel skills that make the road feel manageable.</h2>
+          <p>The site has been simplified to focus on services currently offered: in-car driving instruction, refresher practice, and test-day preparation.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Defensive Driving</h3>
+            <p>Learn how to anticipate hazards, control space, manage speed, and make calm decisions in everyday traffic.</p>
+          </article>
+          <article class="feature">
+            <h3>Parallel Parking</h3>
+            <p>Practice step-by-step parking techniques until tight curbside spaces feel repeatable and less stressful.</p>
+          </article>
+          <article class="feature">
+            <h3>Highway Driving</h3>
+            <p>Build confidence with merging, lane changes, following distance, and freeway awareness.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" id="pricing">
+      <div class="section__intro">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple packages for the time you need.</h2>
+        <p>Choose a full training package, add extra practice, or schedule targeted help before the skills test.</p>
+      </div>
+      <div class="price-grid">
+        <article class="price-card">
+          <h3>6 Hours Driving Instruction</h3>
+          <div class="price">$475 <small>package</small></div>
+          <p>Three 2-hour lessons. Teens should complete the required online or classroom course before starting behind-the-wheel training.</p>
+        </article>
+        <article class="price-card">
+          <h3>2 Hours Driving Instruction</h3>
+          <div class="price">$165 <small>lesson</small></div>
+          <p>Extra practice for specific skills, comfort, or road situations where more guided time would help.</p>
+        </article>
+        <article class="price-card">
+          <h3>Pre-Skills Test Practice</h3>
+          <div class="price">$270 <small>package</small></div>
+          <p>Includes practice before the skills test plus use of the vehicle for the exam.</p>
+        </article>
+        <article class="price-card">
+          <h3>10 Hours Driving Instruction</h3>
+          <div class="price">$795 <small>package</small></div>
+          <p>Five 2-hour lessons for students who want a deeper training plan, more repetition, and stronger road confidence.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="section--soft" id="requirements">
+      <section class="section">
+        <div class="section__intro">
+          <span class="eyebrow">Requirements</span>
+          <h2>DMV permit and license checklist.</h2>
+          <p>Use these common California requirements to prepare for training and the behind-the-wheel test.</p>
+        </div>
+        <div class="requirements-grid">
+          <article class="requirement-card">
+            <h3>DMV Permit Requirements</h3>
+            <ul>
+              <li>You must be 15 1/2 years old.</li>
+              <li>Bring an original or certified copy of a U.S. birth certificate, passport, or green card.</li>
+              <li>Have your Social Security Number.</li>
+              <li>Complete the Driver Education Certificate requirement.</li>
+              <li>A parent or legal guardian must sign the acknowledgement statement before your DMV visit.</li>
+              <li>Complete the DMV application.</li>
+              <li>Pass your vision test and DMV permit test.</li>
+            </ul>
+          </article>
+          <article class="requirement-card">
+            <h3>DMV Driver License Requirements</h3>
+            <ul>
+              <li>You must be 16 years old.</li>
+              <li>Hold your permit for at least 6 months.</li>
+              <li>Make an appointment for the DMV driving test.</li>
+              <li>Complete at least 50 hours of supervised driving, including 10 hours at night.</li>
+              <li>Complete 6 hours of behind-the-wheel training with a driving school.</li>
+              <li>Pass the DMV driving test to obtain your California driver license.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" id="testimonials">
+      <div class="section__intro">
+        <span class="eyebrow">Testimonials</span>
+        <h2>What students are saying.</h2>
+        <p>Real feedback adapted from the original site, updated for Pioneer Driving School.</p>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 stars">*****</div>
+          <p>Sonny is an awesome instructor. His teaching style is calming and comforting. Sonny is easy going and patient. I feel confident that I will pass my driving exam. Five star service all around.</p>
+          <strong>Kiley S.</strong>
+          <span>San Diego, CA</span>
+        </article>
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 stars">*****</div>
+          <p>Sonny helped my son with his driving. He is very accommodating and flexible. Will definitely use him again when my daughter needs driving training in a couple of years.</p>
+          <strong>Jesse P.</strong>
+          <span>San Diego, CA</span>
+        </article>
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 stars">*****</div>
+          <p>Sonny has taught both my teenagers to drive, and he has done a wonderful job with two very different personalities. He taught them confidence and caution.</p>
+          <strong>Roberta P.</strong>
+          <span>San Diego, CA</span>
+        </article>
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 stars">*****</div>
+          <p>I took lessons with Sonny, and he made the process much easier for me. After taking lessons, I was able to pass the exam easily and gain confidence behind the wheel.</p>
+          <strong>Summer A.</strong>
+          <span>Poway, CA</span>
+        </article>
+      </div>
+    </section>
+
+    <div class="section--dark" id="contact">
+      <section class="section">
+        <div class="section__intro">
+          <span class="eyebrow">Contact</span>
+          <h2>Start with a quick call.</h2>
+          <p>Reach Pioneer Driving School directly to ask about availability, lesson fit, and scheduling.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-list">
+            <article class="contact-card">
+              <h3>Phone</h3>
+              <p><a href="tel:+18589105724">(858) 910-5724</a></p>
+            </article>
+            <article class="contact-card">
+              <h3>Email</h3>
+              <p><a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a></p>
+            </article>
+            <article class="contact-card">
+              <h3>Address</h3>
+              <p>16868 Via Del Campo Ct Suite 100, San Diego, CA 92127</p>
+            </article>
+            <article class="contact-card">
+              <h3>Hours</h3>
+              <p>Mon - Sun: 8am - 8pm</p>
+            </article>
+            <article class="contact-card">
+              <h3>Google Reviews</h3>
+              <p><a href="https://maps.app.goo.gl/Azaach6WT7rSJNXm6" target="_blank" rel="noopener">Leave a review on Google</a></p>
+            </article>
+          </div>
+          <article class="contact-card">
+            <h3>Send a message</h3>
+            <form>
+              <label>
+                Name
+                <input name="name" type="text" autocomplete="name" placeholder="Your name">
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" autocomplete="email" placeholder="you@example.com">
+              </label>
+              <label>
+                Message
+                <textarea name="message" placeholder="Tell us what kind of lesson you need"></textarea>
+              </label>
+              <button class="button button--light" type="submit">Send Message</button>
+            </form>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>&copy; 2026 Pioneer Driving School San Diego. All rights reserved.</span>
+      <span>16868 Via Del Campo Ct Suite 100, San Diego, CA 92127</span>
+      <span><a href="tel:+18589105724">(858) 910-5724</a> | <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a> | <a href="https://maps.app.goo.gl/Azaach6WT7rSJNXm6" target="_blank" rel="noopener">Google Reviews</a></span>
+    </div>
+  </footer>
+</body>
+</html>

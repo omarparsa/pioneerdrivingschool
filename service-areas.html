@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pioneer Driving School service areas for behind-the-wheel driving lessons.">
+  <title>Service Areas | Pioneer Driving School San Diego</title>
+  <style>
+    :root {
+      --ink: #16313d;
+      --muted: #536c73;
+      --line: #cfe9ef;
+      --cream: #fff1b8;
+      --sky: #00a7df;
+      --pine: #103f4a;
+      --leaf: #00a879;
+      --gold: #ffca2e;
+      --coral: #ff5a3d;
+      --white: #ffffff;
+      --soft: #effbff;
+      --shadow: 0 22px 55px rgba(0, 118, 160, .18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, var(--pine), #067590);
+      color: var(--white);
+      font-size: .92rem;
+    }
+
+    .topbar__inner,
+    .nav,
+    .section,
+    .footer__inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar__inner,
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .topbar__inner {
+      padding: 10px 0;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 230px;
+    }
+
+    .brand img {
+      width: 70px;
+    }
+
+    .brand span {
+      display: block;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .brand small {
+      color: var(--muted);
+      display: block;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--pine);
+      font-weight: 800;
+      font-size: .9rem;
+      text-transform: uppercase;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      border-radius: 6px;
+      border: 2px solid var(--sky);
+      background: linear-gradient(135deg, var(--sky), var(--leaf));
+      color: var(--white);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      box-shadow: 0 14px 28px rgba(0, 167, 223, .26);
+    }
+
+    .button--book {
+      border-color: #5a97c4;
+      background: #5a97c4;
+      color: var(--white);
+      box-shadow: 0 16px 30px rgba(90, 151, 196, .3);
+    }
+
+    .nav__links .button--book {
+      min-height: 40px;
+      padding: 9px 22px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(16, 63, 74, .94), rgba(0, 112, 142, .82)),
+        url("image-83.png") center / cover no-repeat;
+      color: var(--white);
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--cream);
+      color: var(--pine);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .78rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 18px 0 20px;
+      font-size: 4rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: rgba(255, 255, 255, .86);
+      font-size: 1.15rem;
+    }
+
+    .section__intro {
+      max-width: 740px;
+      margin-bottom: 36px;
+    }
+
+    .section__intro h2 {
+      margin-bottom: 14px;
+      font-size: 2.5rem;
+      line-height: 1.08;
+    }
+
+    .section__intro p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .area-card,
+    .note-card {
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--sky);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(32, 53, 59, .08);
+    }
+
+    .area-card:nth-child(2) {
+      border-top-color: var(--coral);
+    }
+
+    .area-card:nth-child(3) {
+      border-top-color: var(--gold);
+    }
+
+    .area-card p,
+    .note-card p {
+      color: var(--muted);
+    }
+
+    .city-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .city-list span {
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--pine);
+      padding: 7px 11px;
+      font-size: .9rem;
+      font-weight: 800;
+    }
+
+    .section--soft {
+      background: var(--soft);
+    }
+
+    .footer {
+      background: #172b31;
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .footer__inner {
+      padding: 24px 0;
+      font-size: .92rem;
+    }
+
+    .topbar a,
+    .footer a {
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav__links {
+        width: 100%;
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .nav__links .button--book {
+        margin-left: auto;
+      }
+
+      .area-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar__inner {
+        display: grid;
+      }
+
+      .nav__links {
+        font-size: .82rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow-x: visible;
+      }
+
+      .nav__links a {
+        text-align: center;
+      }
+
+      .nav__links .button {
+        grid-column: span 2;
+      }
+
+      .section {
+        width: min(100% - 24px, 1120px);
+        padding: 60px 0;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar__inner" aria-label="Contact information">
+      <span>San Diego behind-the-wheel driving lessons</span>
+      <span><a href="tel:+18589105724">(858) 910-5724</a> | <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html#home" aria-label="Pioneer Driving School home">
+        <img src="pioneer-logo.png" alt="Pioneer Driving School San Diego logo">
+        <span>Pioneer<br><small>Driving School</small></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#lessons">Lessons</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="button button--book" href="book.html">Book Online</a>
+        <a class="button" href="tel:+18589105724">Call Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="section">
+        <span class="eyebrow">Service Area</span>
+        <h1>Driving lessons across Southern California.</h1>
+        <p>Pioneer Driving School is based in San Diego and mirrors the clear regional service-area structure of the original page, with county-focused coverage and easy scheduling by phone.</p>
+        <a class="button" href="tel:+18589105724">Check Availability</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__intro">
+        <span class="eyebrow">Areas We Serve</span>
+        <h2>San Diego, Riverside, and Orange County.</h2>
+        <p>Availability may vary by instructor schedule, pickup location, and package. Call to confirm the best lesson plan for your area.</p>
+      </div>
+      <div class="area-grid">
+        <article class="area-card">
+          <h3>San Diego County</h3>
+          <p>Primary service region for Pioneer Driving School, including North County, coastal communities, and central San Diego.</p>
+          <div class="city-list" aria-label="San Diego County cities">
+            <span>San Diego</span>
+            <span>Poway</span>
+            <span>Rancho Bernardo</span>
+            <span>Escondido</span>
+            <span>Mira Mesa</span>
+            <span>La Jolla</span>
+            <span>Chula Vista</span>
+            <span>Oceanside</span>
+            <span>Carlsbad</span>
+            <span>Vista</span>
+          </div>
+        </article>
+        <article class="area-card">
+          <h3>Riverside County</h3>
+          <p>Regional lesson availability for students who need patient behind-the-wheel coaching and DMV test preparation.</p>
+          <div class="city-list" aria-label="Riverside County cities">
+            <span>Riverside</span>
+            <span>Corona</span>
+            <span>Moreno Valley</span>
+            <span>Temecula</span>
+            <span>Murrieta</span>
+            <span>Menifee</span>
+          </div>
+        </article>
+        <article class="area-card">
+          <h3>Orange County</h3>
+          <p>Selected Orange County service coverage for students looking for extra practice, confidence, and skills-test readiness.</p>
+          <div class="city-list" aria-label="Orange County cities">
+            <span>Irvine</span>
+            <span>Anaheim</span>
+            <span>Santa Ana</span>
+            <span>Mission Viejo</span>
+            <span>Fullerton</span>
+            <span>Orange</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="note-card">
+        <span class="eyebrow">Scheduling</span>
+        <h2>Not sure if your city is covered?</h2>
+        <p>Call <a href="tel:+18589105724">(858) 910-5724</a> or email <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a>. We can confirm pickup options, lesson availability, and the right package for your student.</p>
+        <a class="button" href="index.html#contact">Contact Pioneer</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>&copy; 2026 Pioneer Driving School San Diego. All rights reserved.</span>
+      <span>16868 Via Del Campo Ct Suite 100, San Diego, CA 92127</span>
+      <span><a href="tel:+18589105724">(858) 910-5724</a> | <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a></span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/*---------------------------------------------------------------------------------
+
+ Theme Name:   Designs By Dave O.
+ Theme URI:    https://designsbydaveo.com
+ Description:  
+ Author:       Designs By Dave O
+ Author URI:   https://designsbydaveo.com
+ Template:     Divi
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+
+------------------------------ ADDITIONAL CSS HERE ------------------------------*/
+
+/* align content in rows */
+.ds-vertical-align { 
+display: flex; 
+flex-direction: column; 
+justify-content: center;
+} 
+
+body{
+overflow-x: hidden !important;
+}
+
+/* Add this in the page custom CSS of that page */
+/*  footer.et-l.et-l--footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}. */
