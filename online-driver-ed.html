@@ -3,47 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="See Pioneer Driving School service areas for behind-the-wheel lessons in San Diego County, Riverside County, and Orange County.">
+  <meta name="description" content="Online driver education placeholder for Pioneer Driving School students preparing for California behind-the-wheel lessons.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#103f4a">
-  <link rel="canonical" href="https://pioneerdrivingschools.com/service-areas.html">
+  <link rel="canonical" href="https://pioneerdrivingschools.com/online-driver-ed.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Pioneer Driving School">
-  <meta property="og:title" content="Driving Lesson Service Areas | Pioneer Driving School">
-  <meta property="og:description" content="Pioneer Driving School serves students across San Diego County, Riverside County, and Orange County.">
-  <meta property="og:url" content="https://pioneerdrivingschools.com/service-areas.html">
-  <meta property="og:image" content="https://pioneerdrivingschools.com/image-83.png">
+  <meta property="og:title" content="Online Driver Ed | Pioneer Driving School">
+  <meta property="og:description" content="Pioneer Driving School is preparing an online driver education option through a DMV-approved partner.">
+  <meta property="og:url" content="https://pioneerdrivingschools.com/online-driver-ed.html">
+  <meta property="og:image" content="https://pioneerdrivingschools.com/aplus-homepage-thumbup-girl.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pioneer Driving School Service Areas">
-  <meta name="twitter:description" content="Behind-the-wheel driving lesson availability in San Diego, Riverside, and Orange County.">
-  <meta name="twitter:image" content="https://pioneerdrivingschools.com/image-83.png">
-  <title>Service Areas | Pioneer Driving School San Diego</title>
+  <meta name="twitter:title" content="Online Driver Ed | Pioneer Driving School">
+  <meta name="twitter:description" content="Online driver education details for Pioneer Driving School students.">
+  <meta name="twitter:image" content="https://pioneerdrivingschools.com/aplus-homepage-thumbup-girl.jpg">
+  <title>Online Driver Ed | Pioneer Driving School San Diego</title>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Behind-the-wheel driving lessons",
+      "@type": "WebPage",
+      "name": "Online Driver Ed",
+      "url": "https://pioneerdrivingschools.com/online-driver-ed.html",
+      "description": "Online driver education placeholder for Pioneer Driving School students preparing for California driving lessons.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Pioneer Driving School",
-        "url": "https://pioneerdrivingschools.com/",
-        "telephone": "+1-858-910-5724"
-      },
-      "areaServed": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "San Diego County"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Riverside County"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Orange County"
-        }
-      ],
-      "serviceType": "Driving instruction"
+        "telephone": "+1-858-910-5724",
+        "url": "https://pioneerdrivingschools.com/"
+      }
     }
   </script>
   <style>
@@ -111,6 +98,11 @@
       padding: 10px 0;
     }
 
+    .topbar a,
+    .footer a {
+      font-weight: 700;
+    }
+
     .site-header {
       position: sticky;
       top: 0;
@@ -161,11 +153,15 @@
     .nav__links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       color: var(--pine);
       font-weight: 800;
-      font-size: .9rem;
+      font-size: .84rem;
       text-transform: uppercase;
+    }
+
+    .nav__links a {
+      padding: 10px 0;
     }
 
     .button {
@@ -203,16 +199,18 @@
       box-shadow: 0 14px 28px rgba(255, 202, 46, .28);
     }
 
-    .nav__links .button--book {
-      min-height: 40px;
-      padding: 9px 22px;
-      border-radius: 8px;
-      white-space: nowrap;
+    .button--disabled {
+      color: var(--muted);
+      background: #edf5f7;
+      border-color: var(--line);
+      box-shadow: none;
+      cursor: not-allowed;
     }
 
+    .nav__links .button--book,
     .nav__links .button--call {
       min-height: 40px;
-      padding: 9px 22px;
+      padding: 9px 20px;
       border-radius: 8px;
       white-space: nowrap;
     }
@@ -236,8 +234,8 @@
     }
 
     .site-header.is-collapsed .nav__links {
-      gap: 18px;
-      font-size: .82rem;
+      gap: 16px;
+      font-size: .78rem;
     }
 
     .site-header.is-collapsed .nav__links .button {
@@ -249,12 +247,16 @@
     .hero {
       background:
         linear-gradient(90deg, rgba(16, 63, 74, .94), rgba(0, 112, 142, .82)),
-        url("image-83.png") center / cover no-repeat;
+        url("teen-driver-hero.jpg") center / cover no-repeat;
       color: var(--white);
     }
 
     .section {
-      padding: 86px 0;
+      padding: 76px 0;
+    }
+
+    .hero .section {
+      padding: 72px 0;
     }
 
     .eyebrow {
@@ -268,6 +270,7 @@
       text-transform: uppercase;
       letter-spacing: .08em;
       font-size: .78rem;
+      box-shadow: 0 8px 18px rgba(255, 202, 46, .22);
     }
 
     h1,
@@ -279,80 +282,129 @@
 
     h1 {
       max-width: 760px;
-      margin: 18px 0 20px;
+      margin-bottom: 18px;
       font-size: 4rem;
       line-height: 1;
       letter-spacing: 0;
     }
 
-    .hero p {
-      max-width: 680px;
-      color: rgba(255, 255, 255, .86);
-      font-size: 1.15rem;
-    }
-
-    .section__intro {
-      max-width: 740px;
-      margin-bottom: 36px;
-    }
-
-    .section__intro h2 {
+    h2 {
       margin-bottom: 14px;
-      font-size: 2.5rem;
+      font-size: 2.35rem;
       line-height: 1.08;
+      letter-spacing: 0;
     }
 
-    .section__intro p {
-      color: var(--muted);
-      font-size: 1.05rem;
+    .hero p {
+      max-width: 650px;
+      color: rgba(255, 255, 255, .86);
+      font-size: 1.13rem;
+      margin-bottom: 26px;
     }
 
-    .area-grid {
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .intro-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: stretch;
     }
 
-    .area-card,
-    .note-card {
+    .info-card {
       border: 1px solid var(--line);
-      border-top: 5px solid var(--sky);
       border-radius: 8px;
       background: var(--white);
       padding: 24px;
       box-shadow: 0 12px 32px rgba(32, 53, 59, .08);
     }
 
-    .area-card:nth-child(2) {
-      border-top-color: var(--coral);
+    .info-card--highlight {
+      border-top: 5px solid var(--sky);
     }
 
-    .area-card:nth-child(3) {
-      border-top-color: var(--gold);
-    }
-
-    .area-card p,
-    .note-card p {
+    .info-card p {
       color: var(--muted);
     }
 
-    .city-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+    .info-card p:last-child {
+      margin-bottom: 0;
     }
 
-    .city-list span {
-      border-radius: 999px;
-      background: var(--soft);
+    .check-list {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 26px;
+      margin: 10px 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .check-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--coral);
+      position: absolute;
+      left: 0;
+      top: .55em;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 22px;
+      box-shadow: 0 12px 32px rgba(32, 53, 59, .08);
+      counter-increment: step;
+    }
+
+    .step::before {
+      content: counter(step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: var(--gold);
       color: var(--pine);
-      padding: 7px 11px;
-      font-size: .9rem;
-      font-weight: 800;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+      line-height: 1.2;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: var(--muted);
     }
 
     .section--soft {
+      width: 100%;
+      max-width: none;
       background: var(--soft);
     }
 
@@ -364,11 +416,6 @@
     .footer__inner {
       padding: 24px 0;
       font-size: .92rem;
-    }
-
-    .topbar a,
-    .footer a {
-      font-weight: 700;
     }
 
     @media (max-width: 900px) {
@@ -388,8 +435,9 @@
         margin-left: auto;
       }
 
-      .area-grid {
-        grid-template-columns: 1fr;
+      .intro-grid,
+      .steps {
+        grid-template-columns: 1fr 1fr;
       }
 
       h1 {
@@ -402,11 +450,15 @@
         display: grid;
       }
 
+      .brand img {
+        width: 60px;
+      }
+
       .nav__links {
-        font-size: .82rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         overflow-x: visible;
+        font-size: .82rem;
       }
 
       .nav__links a {
@@ -422,12 +474,26 @@
         padding: 60px 0;
       }
 
+      .hero .section {
+        padding: 58px 0;
+      }
+
       h1 {
         font-size: 2.35rem;
       }
 
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      .hero__actions .button,
       .button {
         width: 100%;
+      }
+
+      .intro-grid,
+      .steps {
+        grid-template-columns: 1fr;
       }
 
       .site-header.is-collapsed .nav {
@@ -496,72 +562,72 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-label="Online driver education">
       <div class="section">
-        <span class="eyebrow">Service Area</span>
-        <h1>Driving lessons across Southern California.</h1>
-        <p>Pioneer Driving School is based in San Diego and mirrors the clear regional service-area structure of the original page, with county-focused coverage and easy scheduling by phone.</p>
-        <a class="button" href="tel:+18589105724">Check Availability</a>
+        <span class="eyebrow">Coming Soon</span>
+        <h1>Online driver ed for California permit prep.</h1>
+        <p>Pioneer Driving School is preparing an online driver education option through Traffic Tutors / Driver Ed Classes, a California DMV-approved online driver education provider.</p>
+        <div class="hero__actions">
+          <a class="button button--disabled" aria-disabled="true">Sign Up Link Coming Soon</a>
+          <a class="button button--book" href="book.html">Book Behind-the-Wheel</a>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__intro">
-        <span class="eyebrow">Areas We Serve</span>
-        <h2>San Diego, Riverside, and Orange County.</h2>
-        <p>Availability may vary by instructor schedule, pickup location, and package. Call to confirm the best lesson plan for your area.</p>
-      </div>
-      <div class="area-grid">
-        <article class="area-card">
-          <h3>San Diego County</h3>
-          <p>Primary service region for Pioneer Driving School, including North County, coastal communities, and central San Diego.</p>
-          <div class="city-list" aria-label="San Diego County cities">
-            <span>San Diego</span>
-            <span>Poway</span>
-            <span>Rancho Bernardo</span>
-            <span>Escondido</span>
-            <span>Mira Mesa</span>
-            <span>La Jolla</span>
-            <span>Chula Vista</span>
-            <span>Oceanside</span>
-            <span>Carlsbad</span>
-            <span>Vista</span>
-          </div>
-        </article>
-        <article class="area-card">
-          <h3>Riverside County</h3>
-          <p>Regional lesson availability for students who need patient behind-the-wheel coaching and DMV test preparation.</p>
-          <div class="city-list" aria-label="Riverside County cities">
-            <span>Riverside</span>
-            <span>Corona</span>
-            <span>Moreno Valley</span>
-            <span>Temecula</span>
-            <span>Murrieta</span>
-            <span>Menifee</span>
-          </div>
-        </article>
-        <article class="area-card">
-          <h3>Orange County</h3>
-          <p>Selected Orange County service coverage for students looking for extra practice, confidence, and skills-test readiness.</p>
-          <div class="city-list" aria-label="Orange County cities">
-            <span>Irvine</span>
-            <span>Anaheim</span>
-            <span>Santa Ana</span>
-            <span>Mission Viejo</span>
-            <span>Fullerton</span>
-            <span>Orange</span>
-          </div>
-        </article>
-      </div>
+    <section class="section intro-grid">
+      <article class="info-card info-card--highlight">
+        <span class="eyebrow">Partner Course Placeholder</span>
+        <h2>Complete online driver education, then train on the road.</h2>
+        <p>This page is ready for the future signup and login links once Pioneer Driving School confirms partner access with Traffic Tutors / Driver Ed Classes.</p>
+        <p>Online driver education will be administered by the licensed course provider. Pioneer Driving School provides behind-the-wheel lessons, refresher practice, and test preparation.</p>
+      </article>
+      <article class="info-card">
+        <h2>Provider Details</h2>
+        <ul class="check-list">
+          <li>Traffic Tutors / Driver Ed Classes partner placeholder</li>
+          <li>California online driver education course</li>
+          <li>Signup and student login links to be added after approval</li>
+          <li>Students can book behind-the-wheel lessons after completing permit steps</li>
+        </ul>
+      </article>
     </section>
 
-    <section class="section section--soft">
-      <div class="note-card">
-        <span class="eyebrow">Scheduling</span>
-        <h2>Not sure if your city is covered?</h2>
-        <p>Call <a href="tel:+18589105724">(858) 910-5724</a> or email <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a>. We can confirm pickup options, lesson availability, and the right package for your student.</p>
-        <a class="button" href="index.html#contact">Contact Pioneer</a>
-      </div>
+    <div class="section--soft">
+      <section class="section">
+        <span class="eyebrow">Student Path</span>
+        <h2>How it will work.</h2>
+        <div class="steps">
+          <article class="step">
+            <h3>Start Online Driver Ed</h3>
+            <p>Use the future partner signup link to begin the required online coursework.</p>
+          </article>
+          <article class="step">
+            <h3>Finish the Course</h3>
+            <p>Complete the online driver education program and receive completion documentation from the provider.</p>
+          </article>
+          <article class="step">
+            <h3>Prepare for Permit</h3>
+            <p>Use the course completion step to continue toward the California learner permit process.</p>
+          </article>
+          <article class="step">
+            <h3>Book Driving Lessons</h3>
+            <p>Schedule behind-the-wheel lessons with Pioneer Driving School when you are ready to train.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="section intro-grid">
+      <article class="info-card">
+        <h2>Already have your permit?</h2>
+        <p>You can skip the online driver ed placeholder and book behind-the-wheel instruction now.</p>
+        <a class="button button--book" href="book.html">Book Online</a>
+      </article>
+      <article class="info-card">
+        <h2>Questions?</h2>
+        <p>Call Pioneer Driving School to ask about online driver education timing, permit preparation, or lesson scheduling.</p>
+        <a class="button button--call" href="tel:+18589105724">Call (858) 910-5724</a>
+      </article>
     </section>
   </main>
 
