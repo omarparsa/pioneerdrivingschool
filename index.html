@@ -341,11 +341,12 @@
       pointer-events: none;
     }
 
-    .hero__photo img {
+    .hero__photo img,
+    .hero__photo video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 62% center;
+      object-position: center;
       mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .75) 15%, #000 34%);
     }
 
@@ -898,7 +899,9 @@
   <main id="home">
     <section class="hero" aria-label="Pioneer Driving School introduction">
       <div class="hero__photo" aria-hidden="true">
-        <img src="aplus-homepage-thumbup-girl.jpg" alt="">
+        <video autoplay muted loop playsinline>
+          <source src="san-diego-beach-hero.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="hero__inner">
         <div>
