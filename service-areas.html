@@ -388,6 +388,36 @@
       .button {
         width: 100%;
       }
+
+      .site-header.is-collapsed .nav {
+        gap: 8px;
+        min-height: auto;
+      }
+
+      .site-header.is-collapsed .brand img {
+        width: 46px;
+      }
+
+      .site-header.is-collapsed .brand {
+        min-width: 0;
+      }
+
+      .site-header.is-collapsed .nav__links {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding-bottom: 0;
+      }
+
+      .site-header.is-collapsed .nav__links a:not(.button) {
+        display: none;
+      }
+
+      .site-header.is-collapsed .nav__links .button {
+        grid-column: span 1;
+        min-height: 38px;
+        padding: 8px 10px;
+        font-size: .76rem;
+      }
     }
   </style>
 </head>
