@@ -411,10 +411,16 @@
       }
 
       .site-header.is-collapsed .nav__links .button {
+        display: inline-flex;
         grid-column: span 1;
         min-height: 38px;
         padding: 8px 10px;
         font-size: .76rem;
+      }
+
+      .site-header.is-collapsed .nav__links .button--book,
+      .site-header.is-collapsed .nav__links .button--call {
+        margin-left: 0;
       }
     }
   </style>
