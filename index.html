@@ -509,6 +509,9 @@
     .feature-grid,
     .price-grid,
     .testimonial-grid,
+    .instructor-grid,
+    .process-grid,
+    .faq-grid,
     .requirements-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -516,6 +519,9 @@
     }
 
     .feature,
+    .instructor-card,
+    .process-card,
+    .faq-card,
     .price-card,
     .testimonial-card,
     .requirement-card,
@@ -528,6 +534,9 @@
     }
 
     .feature,
+    .instructor-card,
+    .process-card,
+    .faq-card,
     .price-card,
     .testimonial-card,
     .requirement-card {
@@ -535,6 +544,9 @@
     }
 
     .feature:nth-child(2),
+    .instructor-card:nth-child(2),
+    .process-card:nth-child(2),
+    .faq-card:nth-child(2),
     .price-card:nth-child(2),
     .testimonial-card:nth-child(2),
     .requirement-card:nth-child(2) {
@@ -542,17 +554,24 @@
     }
 
     .feature:nth-child(3),
+    .process-card:nth-child(3),
+    .faq-card:nth-child(3),
     .price-card:nth-child(3),
     .testimonial-card:nth-child(3) {
       border-top-color: var(--gold);
     }
 
     .price-card:nth-child(4),
+    .process-card:nth-child(4),
+    .faq-card:nth-child(4),
     .testimonial-card:nth-child(4) {
       border-top-color: var(--leaf);
     }
 
     .feature h3,
+    .instructor-card h3,
+    .process-card h3,
+    .faq-card h3,
     .price-card h3,
     .testimonial-card h3,
     .requirement-card h3 {
@@ -562,12 +581,50 @@
     }
 
     .feature p,
+    .instructor-card p,
+    .process-card p,
+    .faq-card p,
     .price-card p,
     .testimonial-card p,
     .requirement-card p,
     .contact-card p {
       color: var(--muted);
       margin-bottom: 0;
+    }
+
+    .instructor-card strong {
+      display: block;
+      color: var(--pine);
+      font-size: .92rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .process-card {
+      counter-increment: process-step;
+    }
+
+    .process-grid {
+      counter-reset: process-step;
+    }
+
+    .process-card::before {
+      content: counter(process-step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--pine);
+      font-weight: 900;
+    }
+
+    .faq-card {
+      grid-column: span 1;
     }
 
     .stars {
@@ -756,6 +813,9 @@
       .feature-grid,
       .price-grid,
       .testimonial-grid,
+      .instructor-grid,
+      .process-grid,
+      .faq-grid,
       .requirements-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -803,6 +863,9 @@
       .feature-grid,
       .price-grid,
       .testimonial-grid,
+      .instructor-grid,
+      .process-grid,
+      .faq-grid,
       .requirements-grid {
         grid-template-columns: 1fr;
       }
@@ -891,6 +954,7 @@
         <a href="#lessons">Lessons</a>
         <a href="#pricing">Pricing</a>
         <a href="online-driver-ed.html">Online Driver Ed</a>
+        <a href="dmv-test-prep.html">DMV Test Prep</a>
         <a href="service-areas.html">Service Areas</a>
         <a href="#contact">Contact</a>
         <a class="button button--book" href="book.html">Book Online</a>
@@ -946,6 +1010,59 @@
           <li>DMV test coaching and pre-test preparation</li>
           <li>Competitive rates with practical scheduling</li>
         </ul>
+      </div>
+    </section>
+
+    <div class="section--soft" id="instructors">
+      <section class="section">
+        <div class="section__intro">
+          <span class="eyebrow">About Us</span>
+          <h2>Meet the instructors behind Pioneer Driving School.</h2>
+          <p>Pioneer Driving School is a family-run San Diego driving school led by certified instructors who make driving feel safer, easier, and more affordable for teens, adults, and seniors.</p>
+        </div>
+        <div class="instructor-grid">
+          <article class="instructor-card">
+            <strong>Founder & Instructor</strong>
+            <h3>Ehsan "Sonny" Parsa</h3>
+            <p>Ehsan Parsa, known to most students as Sonny, founded Pioneer Driving School after teaching his own three kids and thousands of students how to drive. His lessons focus on safe, confident, defensive driving so every student can build a strong foundation behind the wheel.</p>
+          </article>
+          <article class="instructor-card">
+            <strong>Our Goal</strong>
+            <h3>Safe, confident drivers</h3>
+            <p>With 8+ years of experience and more than 10,000 students taught, our top-rated certified instructors help students navigate the road safely, confidently, and defensively through practical one-on-one coaching.</p>
+          </article>
+          <article class="instructor-card">
+            <strong>Why Students Choose Us</strong>
+            <h3>Calm, customized training</h3>
+            <p>Lessons are one-on-one and built around each student's goals, permit status, and comfort level. Training can include defensive driving, parking, highway practice, DMV test coaching, and pickup or drop-off when available.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" id="how-it-works">
+      <div class="section__intro">
+        <span class="eyebrow">How It Works</span>
+        <h2>Simple scheduling, focused lessons, safer driving.</h2>
+        <p>Make it easy to go from interested to booked with a clear lesson path.</p>
+      </div>
+      <div class="process-grid">
+        <article class="process-card">
+          <h3>Book online</h3>
+          <p>Choose an available lesson time through the booking calendar or call to ask about fit and availability.</p>
+        </article>
+        <article class="process-card">
+          <h3>We confirm details</h3>
+          <p>We confirm pickup and drop-off options, permit status, package choice, and the best plan for the student.</p>
+        </article>
+        <article class="process-card">
+          <h3>Train one-on-one</h3>
+          <p>Practice with a patient instructor in a dual-control vehicle with routes and skills matched to your level.</p>
+        </article>
+        <article class="process-card">
+          <h3>Prepare for the DMV</h3>
+          <p>Build confidence with test-day habits, parking, lane changes, freeway practice, and defensive driving skills.</p>
+        </article>
       </div>
     </section>
 
@@ -1037,6 +1154,40 @@
         </div>
       </section>
     </div>
+
+    <section class="section" id="faq">
+      <div class="section__intro">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common questions before you book.</h2>
+        <p>Quick answers for parents, teen drivers, adult learners, and students preparing for the DMV test.</p>
+      </div>
+      <div class="faq-grid">
+        <article class="faq-card">
+          <h3>Do I need a permit before behind-the-wheel lessons?</h3>
+          <p>Teen students need a valid California learner permit before starting behind-the-wheel instruction. Adults can call us to confirm the right next step for their situation.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Do you offer pickup and drop-off?</h3>
+          <p>Pickup and drop-off service is available in select service areas. Availability depends on instructor schedule, location, and lesson package.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Can nervous adult drivers take lessons?</h3>
+          <p>Yes. Lessons are customized for new, nervous, returning, and senior drivers who want calm coaching and practical road confidence.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Do you help with DMV test preparation?</h3>
+          <p>Yes. We offer focused practice for DMV test skills, common mistakes, parking, lane changes, observation habits, and test-day confidence.</p>
+        </article>
+        <article class="faq-card">
+          <h3>How many hours do teen drivers need?</h3>
+          <p>California teen drivers commonly need 6 hours of professional behind-the-wheel training before licensing. Extra practice may help students who want more confidence.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Can I book online?</h3>
+          <p>Yes. Use the Book Online button to choose an available appointment, or call us if you want help selecting the right package.</p>
+        </article>
+      </div>
+    </section>
 
     <section class="section" id="testimonials">
       <div class="section__intro">
