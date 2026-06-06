@@ -749,13 +749,14 @@
     }
 
     .section--dark .section__intro p,
-    .section--dark .contact-card p {
+    .section--dark .contact-card:not(.callback-card) p {
       color: rgba(255, 255, 255, .72);
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: minmax(0, 720px);
+      justify-content: center;
       gap: 22px;
       align-items: stretch;
     }
@@ -793,10 +794,6 @@
       color: var(--muted);
     }
 
-    .callback-card a {
-      color: var(--pine);
-    }
-
     .callback-benefits {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -831,9 +828,10 @@
       font-weight: 900;
     }
 
-    .contact-list {
-      display: grid;
-      gap: 18px;
+    .callback-card a {
+      color: var(--pine);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     form {
@@ -1461,33 +1459,11 @@
     <div class="section--dark" id="contact">
       <section class="section">
         <div class="section__intro">
-          <span class="eyebrow">Contact</span>
-          <h2>Start with a quick call.</h2>
-          <p>Reach Pioneer Driving School directly to ask about availability, lesson fit, and scheduling.</p>
+          <span class="eyebrow">Free Callback</span>
+          <h2>Get help choosing the right lesson.</h2>
+          <p>Send a quick request and we will follow up with availability, pricing, and the best next step for your student.</p>
         </div>
         <div class="contact-grid">
-          <div class="contact-list">
-            <article class="contact-card">
-              <h3>Phone</h3>
-              <p><a href="tel:+18589105724">(858) 910-5724</a></p>
-            </article>
-            <article class="contact-card">
-              <h3>Email</h3>
-              <p><a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a></p>
-            </article>
-            <article class="contact-card">
-              <h3>Address</h3>
-              <p>16868 Via Del Campo Ct Suite 100, San Diego, CA 92127</p>
-            </article>
-            <article class="contact-card">
-              <h3>Hours</h3>
-              <p>Mon - Sun: 10am - 6pm</p>
-            </article>
-            <article class="contact-card">
-              <h3>Google Reviews</h3>
-              <p><a href="https://maps.app.goo.gl/Azaach6WT7rSJNXm6" target="_blank" rel="noopener">Leave a review on Google</a></p>
-            </article>
-          </div>
           <article class="contact-card callback-card" id="callback">
             <h3>Get a free callback today.</h3>
             <p>Tell us the basics and we will call you back from <a href="tel:+18589105724">(858) 910-5724</a> with friendly guidance, availability, and the best lesson option for your situation.</p>
@@ -1538,7 +1514,7 @@
   <footer class="footer">
     <div class="footer__inner">
       <span>&copy; 2026 Pioneer Driving School San Diego. All rights reserved.</span>
-      <span>16868 Via Del Campo Ct Suite 100, San Diego, CA 92127</span>
+      <span>16868 Via Del Campo Ct Suite 100, San Diego, CA 92127 | Mon - Sun: 10am - 6pm</span>
       <span><a href="tel:+18589105724">(858) 910-5724</a> | <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a> | <a href="https://maps.app.goo.gl/Azaach6WT7rSJNXm6" target="_blank" rel="noopener">Google Reviews</a></span>
     </div>
   </footer>
