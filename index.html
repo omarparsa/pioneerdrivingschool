@@ -270,6 +270,7 @@
     }
 
     .nav__links .button--call {
+      display: none;
       min-height: 40px;
       padding: 9px 22px;
       border-radius: 8px;
@@ -1006,6 +1007,14 @@
       .site-header.is-collapsed .nav__links .button--call {
         margin-left: 0;
       }
+
+      .site-header.is-collapsed .nav__links .button--callback {
+        display: none;
+      }
+
+      .site-header.is-collapsed .nav__links .button--call {
+        grid-column: 1 / -1;
+      }
     }
   </style>
 </head>
@@ -1031,7 +1040,7 @@
         <a href="dmv-test-prep.html">DMV Test Prep</a>
         <a href="service-areas.html">Service Areas</a>
         <a href="#contact">Contact</a>
-        <a class="button button--callback" href="#callback">Request Callback</a>
+        <a class="button button--callback" href="#callback">Free Consultation</a>
         <a class="button button--call" href="tel:+18589105724">Call Now</a>
       </div>
     </nav>
@@ -1051,7 +1060,7 @@
           <p>Professional, DMV-certified behind-the-wheel instruction for teen, adult, and senior drivers. Build safer habits with patient coaching, practical routes, and lessons tailored to your goals.</p>
           <div class="hero__actions">
             <a class="button button--call" href="tel:+18589105724">Call (858) 910-5724</a>
-            <a class="button button--callback" href="#callback">Request a Callback</a>
+            <a class="button button--callback" href="#callback">Free Consultation</a>
             <a class="button button--ghost" href="#pricing">View Lesson Packages</a>
           </div>
         </div>
@@ -1393,7 +1402,7 @@
                 Message
                 <textarea name="message" placeholder="Tell us the student's permit status, city, and any scheduling questions"></textarea>
               </label>
-              <button class="button button--callback" type="submit">Request Callback</button>
+              <button class="button button--callback" type="submit">Request Free Consultation</button>
             </form>
           </article>
         </div>

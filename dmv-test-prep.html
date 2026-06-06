@@ -216,6 +216,10 @@
       white-space: nowrap;
     }
 
+    .nav__links .button--call {
+      display: none;
+    }
+
     .site-header.is-collapsed {
       background: rgba(255, 255, 255, .98);
       box-shadow: 0 10px 28px rgba(32, 53, 59, .1);
@@ -528,6 +532,14 @@
       .site-header.is-collapsed .nav__links .button--call {
         margin-left: 0;
       }
+
+      .site-header.is-collapsed .nav__links .button--callback {
+        display: none;
+      }
+
+      .site-header.is-collapsed .nav__links .button--call {
+        grid-column: 1 / -1;
+      }
     }
   </style>
 </head>
@@ -553,7 +565,7 @@
         <a href="dmv-test-prep.html">DMV Test Prep</a>
         <a href="service-areas.html">Service Areas</a>
         <a href="index.html#contact">Contact</a>
-        <a class="button button--callback" href="index.html#callback">Request Callback</a>
+        <a class="button button--callback" href="index.html#callback">Free Consultation</a>
         <a class="button button--call" href="tel:+18589105724">Call Now</a>
       </div>
     </nav>
