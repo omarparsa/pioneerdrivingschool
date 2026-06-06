@@ -61,7 +61,7 @@
     body {
       margin: 0;
       color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
       line-height: 1.6;
       background: var(--white);
     }
@@ -375,6 +375,10 @@
       font-weight: 700;
     }
 
+    .mobile-sticky-cta {
+      display: none;
+    }
+
     @media (max-width: 900px) {
       .nav {
         align-items: flex-start;
@@ -402,6 +406,10 @@
     }
 
     @media (max-width: 620px) {
+      body {
+        padding-bottom: 78px;
+      }
+
       .topbar__inner {
         display: grid;
       }
@@ -478,6 +486,29 @@
       .site-header.is-collapsed .nav__links .button--call {
         grid-column: 1 / -1;
       }
+
+      .mobile-sticky-cta {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, .96);
+        border-top: 1px solid rgba(16, 63, 74, .12);
+        box-shadow: 0 -14px 30px rgba(16, 63, 74, .14);
+        backdrop-filter: blur(14px);
+      }
+
+      .mobile-sticky-cta .button {
+        width: 100%;
+        min-height: 48px;
+        padding: 10px 8px;
+        font-size: .78rem;
+      }
     }
   </style>
 </head>
@@ -503,7 +534,7 @@
         <a href="dmv-test-prep.html">DMV Test Prep</a>
         <a href="service-areas.html">Service Areas</a>
         <a href="index.html#contact">Contact</a>
-        <a class="button button--callback" href="index.html#callback">Free Consultation</a>
+        <a class="button button--callback" href="index.html#callback">Free Callback</a>
         <a class="button button--call" href="tel:+18589105724">Call Now</a>
       </div>
     </nav>
@@ -562,6 +593,10 @@
       <span><a href="tel:+18589105724">(858) 910-5724</a> | <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a></span>
     </div>
   </footer>
+  <div class="mobile-sticky-cta" aria-label="Quick contact options">
+    <a class="button button--call" href="tel:+18589105724">Call Now</a>
+    <a class="button button--callback" href="index.html#callback">Free Callback</a>
+  </div>
   <script>
     const siteHeader = document.querySelector(".site-header");
     const updateHeaderState = () => {

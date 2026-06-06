@@ -103,7 +103,7 @@
     body {
       margin: 0;
       color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
       line-height: 1.6;
       background: var(--white);
     }
@@ -257,9 +257,9 @@
 
     .button--callback {
       border-color: var(--gold);
-      background: linear-gradient(135deg, var(--gold), #f5b942);
+      background: linear-gradient(135deg, #ffcf33, #f5b942);
       color: var(--pine);
-      box-shadow: 0 16px 30px rgba(255, 202, 46, .34);
+      box-shadow: 0 18px 34px rgba(255, 202, 46, .38);
     }
 
     .nav__links .button--book {
@@ -410,6 +410,16 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin-top: 16px;
+      color: rgba(255, 255, 255, .82);
+      font-size: .9rem;
+      font-weight: 800;
     }
 
     .hero-card {
@@ -809,6 +819,13 @@
       text-transform: uppercase;
     }
 
+    .callback-trust {
+      margin: -2px 0 18px;
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 800;
+    }
+
     .contact-card a {
       color: var(--cream);
       font-weight: 900;
@@ -877,6 +894,10 @@
     }
 
     .hidden-field {
+      display: none;
+    }
+
+    .mobile-sticky-cta {
       display: none;
     }
 
@@ -954,6 +975,10 @@
     }
 
     @media (max-width: 620px) {
+      body {
+        padding-bottom: 78px;
+      }
+
       .topbar__inner {
         display: grid;
       }
@@ -1089,6 +1114,29 @@
       .site-header.is-collapsed .nav__links .button--call {
         grid-column: 1 / -1;
       }
+
+      .mobile-sticky-cta {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, .96);
+        border-top: 1px solid rgba(16, 63, 74, .12);
+        box-shadow: 0 -14px 30px rgba(16, 63, 74, .14);
+        backdrop-filter: blur(14px);
+      }
+
+      .mobile-sticky-cta .button {
+        width: 100%;
+        min-height: 48px;
+        padding: 10px 8px;
+        font-size: .78rem;
+      }
     }
   </style>
 </head>
@@ -1114,7 +1162,7 @@
         <a href="dmv-test-prep.html">DMV Test Prep</a>
         <a href="service-areas.html">Service Areas</a>
         <a href="#contact">Contact</a>
-        <a class="button button--callback" href="#callback">Free Consultation</a>
+        <a class="button button--callback" href="#callback">Free Callback</a>
         <a class="button button--call" href="tel:+18589105724">Call Now</a>
       </div>
     </nav>
@@ -1133,9 +1181,14 @@
           <h1>Learn to drive with confidence in San Diego.</h1>
           <p>Professional, DMV-certified behind-the-wheel instruction for teen, adult, and senior drivers. Build safer habits with patient coaching, practical routes, and lessons tailored to your goals.</p>
           <div class="hero__actions">
+            <a class="button button--callback" href="#callback">Get a Free Callback</a>
             <a class="button button--call" href="tel:+18589105724">Call (858) 910-5724</a>
-            <a class="button button--callback" href="#callback">Free Consultation</a>
             <a class="button button--ghost" href="#pricing">View Lesson Packages</a>
+          </div>
+          <div class="hero-proof" aria-label="Pioneer trust proof">
+            <span>DMV Certified</span>
+            <span>Licensed &amp; Insured</span>
+            <span>10,000+ Students Trained</span>
           </div>
         </div>
         <aside class="hero-card" aria-label="Pioneer highlights">
@@ -1436,13 +1489,14 @@
             </article>
           </div>
           <article class="contact-card callback-card" id="callback">
-            <h3>Want help choosing the right lesson?</h3>
-            <p>Tell us a little about the student and we will call you back from <a href="tel:+18589105724">(858) 910-5724</a> with friendly guidance, availability, and package options.</p>
+            <h3>Get a free callback today.</h3>
+            <p>Tell us the basics and we will call you back from <a href="tel:+18589105724">(858) 910-5724</a> with friendly guidance, availability, and the best lesson option for your situation.</p>
             <div class="callback-benefits" aria-label="Callback benefits">
               <span>Free consultation</span>
               <span>No pressure</span>
               <span>Fast follow-up</span>
             </div>
+            <p class="callback-trust">DMV Certified | Licensed &amp; Insured | Free Pickup/Drop-off</p>
             <form name="callback-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="callback-request">
               <input type="hidden" name="notification_email" value="contact@pioneerdrivingschools.com">
@@ -1459,14 +1513,6 @@
                 <input name="phone" type="tel" autocomplete="tel" placeholder="Where should we call you?" required>
               </label>
               <label>
-                Email, optional
-                <input name="email" type="email" autocomplete="email" placeholder="For follow-up details if needed">
-              </label>
-              <label>
-                Best time to call
-                <input name="preferred_callback_time" type="text" placeholder="Example: today after 3pm">
-              </label>
-              <label>
                 What can we help with?
                 <select name="lesson_interest" required>
                   <option value="">Select an option</option>
@@ -1478,10 +1524,10 @@
                 </select>
               </label>
               <label>
-                Anything we should know?
-                <textarea name="message" placeholder="Permit status, city, nervous driver, DMV test date, pickup/drop-off needs, or scheduling questions"></textarea>
+                Best time to call
+                <input name="preferred_callback_time" type="text" placeholder="Example: today after 3pm">
               </label>
-              <button class="button button--callback" type="submit">Request Free Consultation</button>
+              <button class="button button--callback" type="submit">Get My Free Callback</button>
             </form>
           </article>
         </div>
@@ -1496,6 +1542,10 @@
       <span><a href="tel:+18589105724">(858) 910-5724</a> | <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a> | <a href="https://maps.app.goo.gl/Azaach6WT7rSJNXm6" target="_blank" rel="noopener">Google Reviews</a></span>
     </div>
   </footer>
+  <div class="mobile-sticky-cta" aria-label="Quick contact options">
+    <a class="button button--call" href="tel:+18589105724">Call Now</a>
+    <a class="button button--callback" href="#callback">Free Callback</a>
+  </div>
   <script>
     const siteHeader = document.querySelector(".site-header");
     const updateHeaderState = () => {
