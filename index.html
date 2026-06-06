@@ -255,6 +255,13 @@
       box-shadow: 0 16px 30px rgba(90, 151, 196, .34);
     }
 
+    .button--callback {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, var(--gold), #f5b942);
+      color: var(--pine);
+      box-shadow: 0 16px 30px rgba(255, 202, 46, .34);
+    }
+
     .nav__links .button--book {
       min-height: 40px;
       padding: 9px 22px;
@@ -265,6 +272,13 @@
     .nav__links .button--call {
       min-height: 40px;
       padding: 9px 22px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    .nav__links .button--callback {
+      min-height: 40px;
+      padding: 9px 18px;
       border-radius: 8px;
       white-space: nowrap;
     }
@@ -765,6 +779,7 @@
     }
 
     input,
+    select,
     textarea {
       width: 100%;
       border: 1px solid rgba(255, 255, 255, .22);
@@ -776,6 +791,10 @@
       font: inherit;
     }
 
+    select {
+      appearance: none;
+    }
+
     textarea {
       min-height: 132px;
       resize: vertical;
@@ -784,6 +803,10 @@
     input::placeholder,
     textarea::placeholder {
       color: rgba(255, 255, 255, .58);
+    }
+
+    .hidden-field {
+      display: none;
     }
 
     .footer {
@@ -979,6 +1002,7 @@
       }
 
       .site-header.is-collapsed .nav__links .button--book,
+      .site-header.is-collapsed .nav__links .button--callback,
       .site-header.is-collapsed .nav__links .button--call {
         margin-left: 0;
       }
@@ -1007,6 +1031,7 @@
         <a href="dmv-test-prep.html">DMV Test Prep</a>
         <a href="service-areas.html">Service Areas</a>
         <a href="#contact">Contact</a>
+        <a class="button button--callback" href="#callback">Request Callback</a>
         <a class="button button--call" href="tel:+18589105724">Call Now</a>
       </div>
     </nav>
@@ -1026,6 +1051,7 @@
           <p>Professional, DMV-certified behind-the-wheel instruction for teen, adult, and senior drivers. Build safer habits with patient coaching, practical routes, and lessons tailored to your goals.</p>
           <div class="hero__actions">
             <a class="button button--call" href="tel:+18589105724">Call (858) 910-5724</a>
+            <a class="button button--callback" href="#callback">Request a Callback</a>
             <a class="button button--ghost" href="#pricing">View Lesson Packages</a>
           </div>
         </div>
@@ -1326,22 +1352,48 @@
               <p><a href="https://maps.app.goo.gl/Azaach6WT7rSJNXm6" target="_blank" rel="noopener">Leave a review on Google</a></p>
             </article>
           </div>
-          <article class="contact-card">
-            <h3>Send a message</h3>
-            <form>
+          <article class="contact-card" id="callback">
+            <h3>Request a free consultation</h3>
+            <p>Share your details and Pioneer Driving School will follow up from <a href="tel:+18589105724">(858) 910-5724</a>. Netlify will store the request and can email submissions to <a href="mailto:contact@pioneerdrivingschools.com">contact@pioneerdrivingschools.com</a>.</p>
+            <form name="callback-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="callback-request">
+              <input type="hidden" name="notification_email" value="contact@pioneerdrivingschools.com">
+              <label class="hidden-field">
+                Do not fill this out
+                <input name="bot-field" autocomplete="off">
+              </label>
               <label>
                 Name
-                <input name="name" type="text" autocomplete="name" placeholder="Your name">
+                <input name="name" type="text" autocomplete="name" placeholder="Your name" required>
+              </label>
+              <label>
+                Phone
+                <input name="phone" type="tel" autocomplete="tel" placeholder="(858) 910-5724" required>
               </label>
               <label>
                 Email
                 <input name="email" type="email" autocomplete="email" placeholder="you@example.com">
               </label>
               <label>
-                Message
-                <textarea name="message" placeholder="Tell us what kind of lesson you need"></textarea>
+                Preferred callback time
+                <input name="preferred_callback_time" type="text" placeholder="Example: today after 3pm">
               </label>
-              <button class="button button--light" type="submit">Send Message</button>
+              <label>
+                What do you need help with?
+                <select name="lesson_interest" required>
+                  <option value="">Select an option</option>
+                  <option>Teen driving lessons</option>
+                  <option>Adult driving lessons</option>
+                  <option>DMV test prep</option>
+                  <option>Pickup/drop-off availability</option>
+                  <option>Pricing and packages</option>
+                </select>
+              </label>
+              <label>
+                Message
+                <textarea name="message" placeholder="Tell us the student's permit status, city, and any scheduling questions"></textarea>
+              </label>
+              <button class="button button--callback" type="submit">Request Callback</button>
             </form>
           </article>
         </div>

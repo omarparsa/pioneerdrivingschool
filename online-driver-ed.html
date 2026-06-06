@@ -199,6 +199,13 @@
       box-shadow: 0 14px 28px rgba(255, 202, 46, .28);
     }
 
+    .button--callback {
+      color: var(--pine);
+      background: linear-gradient(135deg, var(--gold), #f5b942);
+      border-color: var(--gold);
+      box-shadow: 0 14px 28px rgba(255, 202, 46, .28);
+    }
+
     .button--disabled {
       color: var(--muted);
       background: #edf5f7;
@@ -208,6 +215,7 @@
     }
 
     .nav__links .button--book,
+    .nav__links .button--callback,
     .nav__links .button--call {
       min-height: 40px;
       padding: 9px 20px;
@@ -528,6 +536,7 @@
       }
 
       .site-header.is-collapsed .nav__links .button--book,
+      .site-header.is-collapsed .nav__links .button--callback,
       .site-header.is-collapsed .nav__links .button--call {
         margin-left: 0;
       }
@@ -556,6 +565,7 @@
         <a href="dmv-test-prep.html">DMV Test Prep</a>
         <a href="service-areas.html">Service Areas</a>
         <a href="index.html#contact">Contact</a>
+        <a class="button button--callback" href="index.html#callback">Request Callback</a>
         <a class="button button--call" href="tel:+18589105724">Call Now</a>
       </div>
     </nav>
