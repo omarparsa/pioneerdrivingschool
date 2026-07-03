@@ -76,6 +76,46 @@
       }
     }
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need a permit before behind-the-wheel lessons?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teen students need a valid California learner permit before starting behind-the-wheel instruction. Adults can call Pioneer Driving School to confirm the right next step for their situation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer pickup and drop-off?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pickup and drop-off service is available in select service areas. Availability depends on instructor schedule, location, and lesson package."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can nervous adult drivers take lessons?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Lessons are customized for new, nervous, returning, and senior drivers who want calm coaching and practical road confidence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you help with DMV test preparation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pioneer Driving School offers focused practice for DMV test skills, common mistakes, parking, lane changes, observation habits, and test-day confidence."
+          }
+        }
+      ]
+    }
+  </script>
   <style>
     :root {
       --ink: #16313d;
@@ -422,6 +462,28 @@
       font-weight: 800;
     }
 
+    .hero-review {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      width: fit-content;
+      margin-top: 18px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .9);
+      font-size: .92rem;
+      font-weight: 800;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-review__stars {
+      color: var(--gold);
+      letter-spacing: .06em;
+    }
+
     .hero-card {
       align-self: end;
       background: rgba(255, 255, 255, .94);
@@ -505,6 +567,60 @@
       text-transform: uppercase;
       line-height: 1.25;
       box-shadow: 0 10px 22px rgba(16, 63, 74, .06);
+    }
+
+    .permit-success {
+      background: var(--white);
+    }
+
+    .permit-success__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .permit-success__photo {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--line);
+    }
+
+    .permit-success__photo img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 42%;
+    }
+
+    .permit-success__copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .permit-success__stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .permit-success__stats span {
+      display: flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid rgba(0, 111, 136, .16);
+      border-radius: 8px;
+      background: var(--soft);
+      color: var(--pine);
+      font-size: .8rem;
+      font-weight: 900;
+      line-height: 1.25;
+      text-align: center;
+      text-transform: uppercase;
     }
 
     .section {
@@ -741,6 +857,45 @@
       font-weight: 800;
     }
 
+    .price-card {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+    }
+
+    .price-card p {
+      margin-bottom: 22px;
+    }
+
+    .price-card .button {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .dmv-callout {
+      display: grid;
+      grid-template-columns: 1.1fr auto;
+      gap: 22px;
+      align-items: center;
+      padding: 26px;
+      border: 1px solid rgba(0, 111, 136, .18);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 202, 46, .22), rgba(0, 167, 223, .12)),
+        var(--white);
+      box-shadow: 0 12px 32px rgba(32, 53, 59, .08);
+    }
+
+    .dmv-callout h2 {
+      margin-bottom: 10px;
+    }
+
+    .dmv-callout p {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
     .section--dark {
       width: 100%;
       max-width: none;
@@ -932,7 +1087,9 @@
 
       .hero__inner,
       .split,
-      .contact-grid {
+      .contact-grid,
+      .permit-success__inner,
+      .dmv-callout {
         grid-template-columns: 1fr;
       }
 
@@ -969,6 +1126,11 @@
 
       .trust-bar__inner {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .permit-success__photo img {
+        aspect-ratio: 16 / 13;
+        object-position: center 48%;
       }
     }
 
@@ -1025,6 +1187,10 @@
 
       .trust-bar__item:last-child {
         grid-column: 1 / -1;
+      }
+
+      .permit-success__stats {
+        grid-template-columns: 1fr;
       }
 
       .section__intro h2 {
@@ -1188,6 +1354,10 @@
             <span>Licensed &amp; Insured</span>
             <span>10,000+ Students Trained</span>
           </div>
+          <div class="hero-review" aria-label="Google review highlight">
+            <span class="hero-review__stars">*****</span>
+            <span>5-star Google feedback from San Diego students and parents</span>
+          </div>
         </div>
         <aside class="hero-card" aria-label="Pioneer highlights">
           <img src="pioneer-logo.png" alt="">
@@ -1209,6 +1379,25 @@
         <div class="trust-bar__item">Free Pickup/Drop-off</div>
         <div class="trust-bar__item">99% Pass Rate</div>
         <div class="trust-bar__item">Dual-Control Cars</div>
+      </div>
+    </section>
+
+    <section class="section permit-success" aria-label="Student permit success">
+      <div class="permit-success__inner">
+        <div class="permit-success__photo">
+          <img src="permit-students.jpg" alt="Two Pioneer Driving School students holding California driving permits outside the DMV">
+        </div>
+        <div class="permit-success__copy">
+          <span class="eyebrow">Permit Milestone</span>
+          <h2>From permit day to confident driving.</h2>
+          <p>Getting a permit is an exciting first step. Pioneer helps new drivers turn that milestone into calm, consistent behind-the-wheel practice with patient coaching, real road routes, and clear next steps for parents and students.</p>
+          <div class="permit-success__stats" aria-label="Permit student support highlights">
+            <span>Teen permit support</span>
+            <span>Parent-friendly scheduling</span>
+            <span>DMV test prep available</span>
+          </div>
+          <a class="button button--callback" href="#callback">Plan Lessons After Permit</a>
+        </div>
       </div>
     </section>
 
@@ -1319,22 +1508,37 @@
           <h3>6 Hours Driving Instruction</h3>
           <div class="price">$475 <small>package</small></div>
           <p>Three 2-hour lessons. Teens should complete the required online or classroom course before starting behind-the-wheel training.</p>
+          <a class="button button--callback" href="#callback">Request This Package</a>
         </article>
         <article class="price-card">
           <h3>2 Hours Driving Instruction</h3>
           <div class="price">$165 <small>lesson</small></div>
           <p>Extra practice for specific skills, comfort, or road situations where more guided time would help.</p>
+          <a class="button button--callback" href="#callback">Request This Lesson</a>
         </article>
         <article class="price-card">
           <h3>Pre-Skills Test Practice</h3>
           <div class="price">$270 <small>package</small></div>
           <p>Includes practice before the skills test plus use of the vehicle for the exam.</p>
+          <a class="button button--callback" href="#callback">Request Test Prep</a>
         </article>
         <article class="price-card">
           <h3>10 Hours Driving Instruction</h3>
           <div class="price">$795 <small>package</small></div>
           <p>Five 2-hour lessons for students who want a deeper training plan, more repetition, and stronger road confidence.</p>
+          <a class="button button--callback" href="#callback">Request This Package</a>
         </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="dmv-callout">
+        <div>
+          <span class="eyebrow">DMV Test Soon?</span>
+          <h2>Get focused practice before test day.</h2>
+          <p>Work on observation habits, parking, lane changes, smooth control, and test-day expectations with a patient instructor before your California behind-the-wheel exam.</p>
+        </div>
+        <a class="button button--call" href="dmv-test-prep.html">View DMV Test Prep</a>
       </div>
     </section>
 
@@ -1473,6 +1677,7 @@
               <span>Fast follow-up</span>
             </div>
             <p class="callback-trust">DMV Certified | Licensed &amp; Insured | Free Pickup/Drop-off</p>
+            <p class="callback-trust">We usually call back the same day during business hours.</p>
             <form name="callback-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="callback-request">
               <input type="hidden" name="notification_email" value="contact@pioneerdrivingschools.com">
