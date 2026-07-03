@@ -1006,6 +1006,28 @@
       color: var(--pine);
     }
 
+    .sms-consent {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px;
+      border: 1px solid rgba(16, 63, 74, .16);
+      border-radius: 8px;
+      background: rgba(0, 167, 223, .07);
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .sms-consent input {
+      width: 18px;
+      min-height: 18px;
+      margin-top: 2px;
+      accent-color: var(--sky);
+    }
+
     input,
     select,
     textarea {
@@ -1707,6 +1729,10 @@
               <label>
                 Best time to call
                 <input name="preferred_callback_time" type="text" placeholder="Example: today after 3pm">
+              </label>
+              <label class="sms-consent">
+                <input name="sms_consent" type="checkbox" value="Agreed to SMS scheduling and reminder messages" required>
+                <span>I agree to receive text messages from Pioneer Driving School about scheduling, appointment reminders, and lesson updates. Message and data rates may apply. Reply STOP to opt out.</span>
               </label>
               <button class="button button--callback" type="submit">Get My Free Callback</button>
             </form>
